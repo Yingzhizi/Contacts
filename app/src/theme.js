@@ -26,6 +26,9 @@ export const rawTheme = createMuiTheme({
       xLight: green[50],
       dark: green[700],
     },
+	text: {
+		secondary: '#fa7e2f',
+	}
   },
   typography: {
     fontFamily: "'Work Sans', sans-serif",

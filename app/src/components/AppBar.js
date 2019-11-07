@@ -1,4 +1,5 @@
 import React from 'react';
+import { useHistory } from "react-router-dom";
 import { makeStyles } from '@material-ui/core/styles';
 import Link from '@material-ui/core/Link';
 import AppBar from '@material-ui/core/AppBar';
@@ -28,11 +29,12 @@ const useStyles = makeStyles(theme => ({
 
 export default function AppAppBar() {
   const classes = useStyles();
+  let history = useHistory();
   return (
     <div>
       <AppBar position="fixed">
         <Toolbar className={classes.toolbar}>
-		  <Link href="/">
+		  <Link onClick={() => history.push('/')}>
 		  	<img src={logo} alt="logo" className={classes.logoIcon} />
 		  </Link>
           <Link
@@ -40,7 +42,7 @@ export default function AppAppBar() {
             underline="none"
             color="inherit"
             className={classes.title}
-            href="/"
+            onClick={() => history.push('/')}
           >
             {'Contacts'}
           </Link>
